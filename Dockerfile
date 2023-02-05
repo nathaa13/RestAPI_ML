@@ -1,11 +1,9 @@
 #Dockerfile to build a flask app
 
 FROM python:3.8-slim-buster
-
-WORKDIR /app
-COPY requirements.txt requirements.txt
+ADD . /api
+WORKDIR /api
 RUN pip install -r requirements.txt
 
-COPY . .
 
 CMD ["python", "api.py"]
